@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" media="screen and (max-width: 616px)"  href="phone.css">
+<!-- Dark blue color : 011627
+white color : fdfffc
+light blue : 2ec4b6 
+font-family: 'Galada', cursive;
+-->
+  <title>Free music for everyone | Music.com</title>
+</head>
+<body>
+  <header id="navBar">
+    <div class="nav">
+      <img src="img/logo.png" width="80px" height="80px"/>
+      <ul>
+        <div class="item"><li><a href="#home">Home</a></li></div>
+        <div class="item"><li><a href="#Music">My Music</a></li></div>
+        <div class="item"><li><a href="#Service">Services</a></li></div>
+        <div class="item"><li><a href="#Contact">Contact Us</a></li></div>
+        <div class="item"><li><a href="#About">About Us</a></li></div>
+      </ul>
+    </div>
+
+  </header>
+  <!-- now its time for main home  -->
+  <section id="home">
+      <div id="MainBox">
+      <div class="MainLine">Hear a lots of Music For free</div>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br/> Consequuntur iusto eveniet recusandae placeat officiis.</p>
+      <a href="#Contact"><button type="submit" >Check here</button></a>
+    </div>
+  <!-- I want to apply here a bottom arrow  -->
+  </section>
+
+  <section id="Music">
+    <h1>My Music Collections</h1>
+    <div id="MyMusic">
+      <div class="MusicLayout">
+        <h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p>
+      </div>
+      <div class="MusicLayout"><h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+      <div class="MusicLayout"><h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+      <div class="MusicLayout"><h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+      <div class="MusicLayout"><h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+      <div class="MusicLayout"><h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+      <div class="MusicLayout"><h3>what's popin</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+        <div class="MusicLayout"><h3>what's popin</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolorem!</p></div>
+    </div>
+  </section>
+  <hr/>
+  <!-- Now My services Section is start -->
+  <section id="Service">
+    <h1 id="serviceMainLine">Service Name</h1>
+    <div id="myService">
+     <div class="content">
+      <h1>Service Name</h1>
+       <img src="img/b1.jpg" alt="Service Image" width="250px" height="200px"/>
+       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br/> Tempore ex sequi illo!</p>
+     </div>
+     <div class="content">
+      <h1>Service Name</h1>
+      <img src="img/b1.jpg" alt="Service Image" width="250px" height="200px"/>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br/> Tempore ex sequi illo!</p>
+     </div>
+     <div class="content">
+      <h1>Service Name</h1>
+      <img src="img/b1.jpg" alt="Service Image" width="250px" height="200px"/>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br/> Tempore ex sequi illo!</p>
+     </div>
+    </div>
+  </section>
+  <hr/>
+  <section id="Contact">
+    <h1 id="MainLineForContact">Contact Us</h1>
+    <div id="container">
+      <label for="text">Name</label>
+      <input type="text" id="name"/>
+      <label for="email">Email : </label>
+      <input type="email" id="email"/>
+      <label for="number">Phone Number : </label>
+      <input type="number" id="number"/>
+      <label for="comment">Message : </label>
+      <textarea id="comment" name="comment" cols="50" rows="4" ></textarea>
+      <button type="submit" onclick="submit()">Submit</button>
+    </div>
+  </section>
+  <hr/>
+  <footer id="About">
+    <h1 id="mainline">About Us</h1>
+    <div class="content">
+      <h3>We Are here to help you</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Aut animi esse dolor vero perferendis asperiores iusto ea sed doloribus?</p>
+    </div>
+    <p id="copy"><i class="fa fa-copyright" aria-hidden="true">Copyright 2020</i></p>
+  </footer>
+  <script>
+    window.onload = function(){
+      let nameOfUser = localStorage.getItem("name");
+      if(nameOfUser!=null){
+        document.getElementById("container").style.display="none";
+        document.getElementById("MainLineForContact").innerText = "Hey " + nameOfUser + " How are You";
+      document.getElementById("MainLineForContact").style.color = "lightgreen";
+      }
+    };
+    let array = ["img/b1.jpg", "img/b2.jpg", "img/image.jpg"];
+    let i =0;
+    setInterval(function(){
+      if(i<3){
+      document.getElementById("home").style.backgroundImage = "url('"+array[i]+"')";
+      i++;
+      }else{
+        i=0;
+      }
+    }, 5000);
+
+    function submit(){
+      let name = document.getElementById("name");
+      console.log(name);
+      let email = document.getElementById("email");
+      console.log(email);
+      let number = document.getElementById("number");
+      console.log(number);
+      let comment = document.getElementById("comment");
+      console.log(comment)
+      if(name.value.length>1&&email.value.length>2&&number.value.length>9&&comment.value.length>10){
+      localStorage.setItem("name", name.value);
+      document.getElementById("container").style.display="none";
+      document.getElementById("MainLineForContact").innerText = "Thanks For Submitting";
+      document.getElementById("MainLineForContact").style.color = "lightgreen";
+      }else{
+        name.value="";
+        email.value="";
+        number.value="";
+        comment.value="";
+        document.getElementById("MainLineForContact").innerText = "Please Enter correct information!";
+        document.getElementById("MainLineForContact").style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
